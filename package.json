@@ -1,6 +1,6 @@
 {
   "name": "@kne/is-empty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "用于判断数据是否为空，考虑了数组和对象的情况",
   "main": "index.js",
   "scripts": {

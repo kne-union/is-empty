@@ -34,5 +34,8 @@
   "devDependencies": {
     "husky": "^9.0.11",
     "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

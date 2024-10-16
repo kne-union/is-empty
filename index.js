@@ -34,4 +34,4 @@ const filterEmpty = (value = {}) => {
 
 const isEmpty = value => !isNotEmpty(value);
 
-modules.exports = { isEmpty, isNotEmpty, filterEmpty };
+module.exports = { isEmpty, isNotEmpty, filterEmpty };

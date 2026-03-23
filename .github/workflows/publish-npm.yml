@@ -5,9 +5,10 @@ on:
     types:
       - closed
 jobs:
-  node-npm:
+  libs-npm:
     if: github.event.pull_request.merged == true
-    uses: kne-union/actions/.github/workflows/publish-node-workflow.yml@master
+    uses: kne-union/actions/.github/workflows/publish-libs-workflow.yml@master
     secrets: inherit
     with:
       package_name: '@kne/is-empty'
+      example_package_name: '@kne-components/is-empty'

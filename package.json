@@ -1,13 +1,33 @@
 {
   "name": "@kne/is-empty",
-  "version": "1.0.1",
-  "description": "用于判断数据是否为空，考虑了数组和对象的情况",
-  "main": "index.js",
+  "version": "1.1.0",
+  "description": "用于判断和过滤空值的工具库，支持对象、数组的递归判断，保留数字0和布尔值false",
+  "syntax": {
+    "esmodules": true
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.js",
   "scripts": {
-    "init": "husky",
+    "init": "husky && npm run init-example",
+    "start": "run-p start:lib start:md start:example",
+    "build": "run-s build:lib build:md build:example",
+    "init-example": "modules-dev-libs-init",
     "build:md": "npx @kne/md-doc",
     "start:md": "npx @kne/md-doc --watch",
-    "prettier": "prettier --config .prettierrc --write '{libs/**/*,index}.{js,jsx,ts,tsx,json,css,scss}'",
+    "build:lib-main": "microbundle --no-compress --format modern,cjs --jsxImportSource react --jsx React.createElement --jsxFragment React.Fragment",
+    "build:types": "cp src/index.d.ts dist/",
+    "build:package-manifest": "cp src/package-manifest.json dist/",
+    "build:lib": "run-s build:lib-main build:types build:package-manifest",
+    "start:lib": "microbundle watch --no-compress --format modern,cjs --jsxImportSource react --jsx React.createElement --jsxFragment React.Fragment",
+    "build:example": "cd example && npm run build",
+    "start:example": "cd example && npm run start",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "prettier": "prettier --config .prettierrc --write '{src/**/*,index,prompts}.{js,jsx,ts,tsx,json,css,scss}'",
     "lint-staged": "npx lint-staged"
   },
   "lint-staged": {
@@ -17,14 +37,26 @@
     ]
   },
   "files": [
-    "index.js",
-    "libs"
+    "dist"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kne-union/is-empty.git"
   },
-  "keywords": [],
+  "keywords": [
+    "is-empty",
+    "is-not-empty",
+    "empty-check",
+    "filter-empty",
+    "utility",
+    "javascript",
+    "typescript",
+    "object",
+    "array",
+    "recursive",
+    "validation",
+    "form-data"
+  ],
   "author": "linzp",
   "license": "ISC",
   "bugs": {
@@ -32,8 +64,14 @@
   },
   "homepage": "https://github.com/kne-union/is-empty#readme",
   "devDependencies": {
+    "@kne/microbundle": "^0.15.5",
+    "@kne/modules-dev": "^2.0.33",
+    "cross-env": "^7.0.3",
     "husky": "^9.0.11",
-    "prettier": "^3.2.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"

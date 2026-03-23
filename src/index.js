@@ -1,6 +1,6 @@
-const isPlainObject = require('lodash/isPlainObject');
-const getValues = require('lodash/values');
-const isArray = require('lodash/isArray');
+import isPlainObject from 'lodash/isPlainObject.js';
+import getValues from 'lodash/values.js';
+import isArray from 'lodash/isArray.js';
 
 const isNotEmpty = value => {
   if (isPlainObject(value)) {
@@ -34,4 +34,4 @@ const filterEmpty = (value = {}) => {
 
 const isEmpty = value => !isNotEmpty(value);
 
-module.exports = { isEmpty, isNotEmpty, filterEmpty };
+export { isEmpty, isNotEmpty, filterEmpty };

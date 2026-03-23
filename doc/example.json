@@ -1,0 +1,69 @@
+{
+  "isFull": false,
+  "list": [
+    {
+      "title": "基础用法",
+      "description": "展示 isEmpty、isNotEmpty、filterEmpty 的基本使用方法",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_IsEmpty",
+          "packageName": "@kne/current-lib_is-empty",
+          "importStatement": "import * as _IsEmpty from \"@kne/is-empty\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    },
+    {
+      "title": "isNotEmpty 判断非空",
+      "description": "isNotEmpty 函数用于判断值是否为非空，支持对象、数组、字符串等多种类型",
+      "code": "./is-not-empty.js",
+      "scope": [
+        {
+          "name": "_IsEmpty",
+          "packageName": "@kne/current-lib_is-empty",
+          "importStatement": "import * as _IsEmpty from \"@kne/is-empty\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    },
+    {
+      "title": "isEmpty 判断为空",
+      "description": "isEmpty 函数是 isNotEmpty 的反向，用于判断值是否为空",
+      "code": "./is-empty.js",
+      "scope": [
+        {
+          "name": "_IsEmpty",
+          "packageName": "@kne/current-lib_is-empty",
+          "importStatement": "import * as _IsEmpty from \"@kne/is-empty\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    },
+    {
+      "title": "filterEmpty 过滤空值",
+      "description": "filterEmpty 函数用于递归过滤对象或数组中的空值，常用于表单数据处理",
+      "code": "./filter-empty.js",
+      "scope": [
+        {
+          "name": "_IsEmpty",
+          "packageName": "@kne/current-lib_is-empty",
+          "importStatement": "import * as _IsEmpty from \"@kne/is-empty\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "description": "用于判断数据是否为空，考虑了数组和对象的情况",
+  "modules": {
+    "isNotEmpty": {
+      "description": "判断值是否为非空，对于对象需要至少有一个真值属性，对于数组需要至少有一个真值元素",
+      "type": "boolean",
+      "parameters": [
+        {
+          "name": "value",
+          "description": "需要判断的值，支持对象、数组、数字、字符串、布尔值等任意类型",
+          "type": "any"
+        }
+      ],
+      "returns": "boolean"
+    },
+    "isEmpty": {
+      "description": "判断值是否为空，是 isNotEmpty 的反向函数",
+      "type": "boolean",
+      "parameters": [
+        {
+          "name": "value",
+          "description": "需要判断的值，支持对象、数组、数字、字符串、布尔值等任意类型",
+          "type": "any"
+        }
+      ],
+      "returns": "boolean"
+    },
+    "filterEmpty": {
+      "description": "递归过滤对象或数组中的空值，常用于表单数据处理。会过滤 null、undefined、空字符串、空对象、空数组，但保留数字 0 和布尔值 false",
+      "type": "object|array|any",
+      "parameters": [
+        {
+          "name": "value",
+          "description": "需要过滤的值，默认为空对象",
+          "type": "object|array",
+          "defaultValue": "{}"
+        }
+      ],
+      "returns": "object|array|any"
+    }
+  }
+}
